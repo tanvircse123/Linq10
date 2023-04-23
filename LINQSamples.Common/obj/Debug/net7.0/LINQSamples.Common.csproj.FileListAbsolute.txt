@@ -1,0 +1,15 @@
+/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/bin/Debug/net7.0/LINQSamples.Common.deps.json
+/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/bin/Debug/net7.0/LINQSamples.Common.dll
+/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/bin/Debug/net7.0/LINQSamples.Common.pdb
+/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/bin/Debug/net7.0/LINQSamples.DataLayer.dll
+/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/bin/Debug/net7.0/LINQSamples.DataLayer.pdb
+/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/obj/Debug/net7.0/LINQSamples.Common.csproj.AssemblyReference.cache
+/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/obj/Debug/net7.0/LINQSamples.Common.GeneratedMSBuildEditorConfig.editorconfig
+/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/obj/Debug/net7.0/LINQSamples.Common.AssemblyInfoInputs.cache
+/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/obj/Debug/net7.0/LINQSamples.Common.AssemblyInfo.cs
+/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/obj/Debug/net7.0/LINQSamples.Common.csproj.CoreCompileInputs.cache
+/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/obj/Debug/net7.0/LINQSamples.Common.csproj.CopyComplete
+/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/obj/Debug/net7.0/LINQSamples.Common.dll
+/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/obj/Debug/net7.0/refint/LINQSamples.Common.dll
+/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/obj/Debug/net7.0/LINQSamples.Common.pdb
+/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/obj/Debug/net7.0/ref/LINQSamples.Common.dll

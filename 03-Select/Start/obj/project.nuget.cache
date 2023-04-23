@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KFAszVlbzTecO9zsC1rGTwkYe1gkNa8oy/i2YqwFJG2wcxnMNvVM58tSo01Nc7Y66VYETzrX2l6K83l/PnX74A==",
+  "dgSpecHash": "0QbiZ7SAbN0IU1zO58AVyHzZzXrcMHRrjFkBF9ZJTJfOWdSvtA8VHsMc7iTC8W9Ve4mR+sUi2nG86ULnUJ++8A==",
   "success": true,
   "projectFilePath": "/media/tanvir/New Volume/Code/Linq10/03-Select/Start/LINQSamples.csproj",
-  "expectedPackageFiles": [
-    "/home/tanvir/.nuget/packages/microsoft.netcore.app.ref/6.0.15/microsoft.netcore.app.ref.6.0.15.nupkg.sha512",
-    "/home/tanvir/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.15/microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512",
-    "/home/tanvir/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.15/microsoft.netcore.app.host.linux-x64.6.0.15.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

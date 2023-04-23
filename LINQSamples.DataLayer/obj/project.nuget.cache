@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bFMcKgsf+cIdkhjqW3Lnbu5+9cVdXI6wXC4xkukJPEOFILly+gjxapXVrUplkozK/hlHJ1pfOIM7PoKcvT2Taw==",
+  "dgSpecHash": "YQh8XRwCRJHoXcSIOUMG1sAcasy2f4paS/smKXpSopnEPb61dKTXEoL7AAfpC3FdyOtkCUmlXNydLc5lkBQLJw==",
   "success": true,
   "projectFilePath": "/media/tanvir/New Volume/Code/Linq10/LINQSamples.DataLayer/LINQSamples.DataLayer.csproj",
-  "expectedPackageFiles": [
-    "/home/tanvir/.nuget/packages/microsoft.netcore.app.ref/6.0.15/microsoft.netcore.app.ref.6.0.15.nupkg.sha512",
-    "/home/tanvir/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.15/microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
