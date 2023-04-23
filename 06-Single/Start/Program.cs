@@ -5,9 +5,16 @@ SamplesViewModel vm = new();
 
 try
 {
-  // Call Sample Method
+  //var result = vm.FirstQuery();
+  //var result = vm.FirstMethod();
+  //Call Sample Method
+  //var result = vm.SingleOrDefaultQuery();
+  //var result = vm.FirstOrDefaultQuery();
+  //var result = vm.FirstOrDefaultMethod();
+  //var result = vm.SingleQuery();
+  //Console.WriteLine("------------------");
+  //var result = vm.SingleMethod();
   var result = vm.SingleOrDefaultQuery();
-
   // Display Results
   vm.Display(result);
 }

@@ -15,9 +15,8 @@
       Product value = null;
 
       // Write Query Syntax Here
-
+      value = (from prod in products select prod).First(prod=>prod.Color == "Red");
       // Test the exception handling
-
       return value;
     }
     #endregion
@@ -35,7 +34,7 @@
       Product value = null;
 
       // Write Method Syntax Here
-      
+      value = products.First(s=>s.Color == "Red");
       return value;
     }
     #endregion
@@ -47,15 +46,24 @@
     /// Use FirstOrDefault() when you DON'T know if a collection might have one element you are looking for
     /// Using FirstOrDefault() avoids throwing an exception which can hurt performance
     /// </summary>
+     
     public Product FirstOrDefaultQuery()
     {
       List<Product> products = GetProducts();
       Product value = null;
 
       // Write Query Syntax Here
-
+    
+       var NotFoundProduct = new Product{
+        ProductID = -1,
+        Name="Not Found"
+      };
+      //value = (from prod in products select prod)
+      //.FirstOrDefault(prod=>prod.Color=="Red",NotFoundProduct);
       // Test the exception handling
-
+      value = (from prod in products select prod)
+      .FirstOrDefault(prod=>prod.Color=="purple",NotFoundProduct);
+      
       return value;
     }
     #endregion
@@ -71,8 +79,12 @@
     {
       List<Product> products = GetProducts();
       Product value = null;
-
+      var NotFoundProduct = new Product{
+        ProductID = -1,
+        Name="Not Found"
+      };
       // Write Method Syntax Here
+      value = products.FirstOrDefault(prod=>prod.Color == "Red",NotFoundProduct);
 
       return value;
     }
@@ -127,6 +139,7 @@
       Product value = null;
 
       // Write Query Syntax Here
+      value = (from prod in products select prod).LastOrDefault(s=>s.Color=="Red");
       
       // Test the exception handling
       
@@ -143,7 +156,7 @@
     {
       List<Product> products = GetProducts();
       Product value = null;
-
+      value = products.LastOrDefault(s=>s.Color=="Red");
       // Write Method Syntax Here
       
 
@@ -199,11 +212,15 @@
       Product value = null;
 
       // Write Query Syntax Here
+      // if more than 1 match found it will throw exception
+      // so always use this with the distinct column
+      // means column always has unique value
+      // like ProductID product Id is unique
 
       // Test the exception handling for finding multiple values
 
       // Test the exception handling for the list is null
-
+      value = (from prod in products select prod).Single(s=>s.ProductID == 706);
       return value;
     }
     #endregion
@@ -220,7 +237,7 @@
       Product value = null;
 
       // Write Method Syntax Here
-
+      value = products.Single(s=>s.ProductID == 706);
       return value;
     }
     #endregion
@@ -240,7 +257,10 @@
 
 
       // Test the exception handling for finding multiple values
-
+      value = (from prod in products select prod).SingleOrDefault(s=>s.ProductID == 7011,new Product{
+        ProductID = -1,
+        Name = "NotFound"
+      });
 
       // Test the exception handling for the list is empty
 
@@ -265,7 +285,10 @@
       Product value = null;
 
       // Write Method Syntax Here
-      
+      value = products.SingleOrDefault(s=>s.ProductID == 11111,new Product{
+        ProductID = -1,
+        Name="Not Found"
+      });
 
       return value;
     }
