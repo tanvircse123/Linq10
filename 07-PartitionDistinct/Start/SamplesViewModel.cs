@@ -12,6 +12,7 @@
       List<Product> list = new();
 
       // Write Query Syntax Here
+      list = (from prod in products orderby prod.Color ascending select prod).Take(10).ToList();
       
 
       return list;
@@ -28,7 +29,7 @@
       List<Product> list = new();
 
       // Write Query Syntax Here
-     
+      list = products.OrderBy(s=>s.Color).Take(10).ToList();     
 
       return list;
     }
@@ -44,7 +45,8 @@
       List<Product> list = new();
 
       // Write Query Syntax Here
-
+      // 5..8 will return 6,7,8
+      list = (from prod in products orderby prod.Color ascending select prod).Take(5..8).ToList();
      
       return list;
     }
@@ -60,7 +62,7 @@
       List<Product> list = new();
 
       // Write Query Syntax Here
-      
+      list = products.OrderBy(s=>s.Name).Take(5..8).ToList();
 
       return list;
     }
@@ -76,6 +78,8 @@
       List<Product> list = new();
 
       // Write Query Syntax Here
+      // instead of where clause we could use th takewhile clause
+      // to query data
       
 
       return list;

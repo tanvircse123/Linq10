@@ -1,0 +1,178 @@
+{
+  "format": 1,
+  "restore": {
+    "/media/tanvir/New Volume/Code/Linq10/07-PartitionDistinct/Start/LINQSamples.csproj": {}
+  },
+  "projects": {
+    "/media/tanvir/New Volume/Code/Linq10/07-PartitionDistinct/Start/LINQSamples.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/media/tanvir/New Volume/Code/Linq10/07-PartitionDistinct/Start/LINQSamples.csproj",
+        "projectName": "LINQSamples",
+        "projectPath": "/media/tanvir/New Volume/Code/Linq10/07-PartitionDistinct/Start/LINQSamples.csproj",
+        "packagesPath": "/home/tanvir/.nuget/packages/",
+        "outputPath": "/media/tanvir/New Volume/Code/Linq10/07-PartitionDistinct/Start/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tanvir/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/LINQSamples.Common.csproj": {
+                "projectPath": "/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/LINQSamples.Common.csproj"
+              },
+              "/media/tanvir/New Volume/Code/Linq10/LINQSamples.DataLayer/LINQSamples.DataLayer.csproj": {
+                "projectPath": "/media/tanvir/New Volume/Code/Linq10/LINQSamples.DataLayer/LINQSamples.DataLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/LINQSamples.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/LINQSamples.Common.csproj",
+        "projectName": "LINQSamples.Common",
+        "projectPath": "/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/LINQSamples.Common.csproj",
+        "packagesPath": "/home/tanvir/.nuget/packages/",
+        "outputPath": "/media/tanvir/New Volume/Code/Linq10/LINQSamples.Common/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tanvir/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/media/tanvir/New Volume/Code/Linq10/LINQSamples.DataLayer/LINQSamples.DataLayer.csproj": {
+                "projectPath": "/media/tanvir/New Volume/Code/Linq10/LINQSamples.DataLayer/LINQSamples.DataLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/media/tanvir/New Volume/Code/Linq10/LINQSamples.DataLayer/LINQSamples.DataLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/media/tanvir/New Volume/Code/Linq10/LINQSamples.DataLayer/LINQSamples.DataLayer.csproj",
+        "projectName": "LINQSamples.DataLayer",
+        "projectPath": "/media/tanvir/New Volume/Code/Linq10/LINQSamples.DataLayer/LINQSamples.DataLayer.csproj",
+        "packagesPath": "/home/tanvir/.nuget/packages/",
+        "outputPath": "/media/tanvir/New Volume/Code/Linq10/LINQSamples.DataLayer/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tanvir/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
