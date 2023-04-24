@@ -80,8 +80,8 @@
       // Write Query Syntax Here
       // instead of where clause we could use th takewhile clause
       // to query data
-      
-
+      // you can add in the where clause but we use takewhile
+      list = (from prod in products orderby prod.Name select prod).TakeWhile(prod=>prod.Name.StartsWith("A")).ToList();
       return list;
     }
     #endregion
@@ -96,7 +96,8 @@
       List<Product> list = new();
 
       // Write Method Syntax Here
-     
+      list = products.OrderBy(s=>s.Name).TakeWhile(s=>s.Name.StartsWith("A")).ToList();
+
 
       return list;
     }
@@ -112,6 +113,7 @@
       List<Product> list = new();
 
       // Write Query Syntax Here
+      list = (from prod in products orderby prod.Name select prod).Skip(30).ToList();
       
 
       return list;
@@ -128,7 +130,7 @@
       List<Product> list = new();
 
       // Write Method Syntax Here
-      
+      list = products.OrderBy(s=>s.Name).Skip(30).ToList();
 
       return list;
     }
@@ -144,8 +146,8 @@
       List<Product> list = new();
 
       // Write Query Syntax Here
-      
-
+      //list = (from prod in products select prod).SkipWhile(prod=>prod.Name.StartsWith("H")).ToList();
+      list = (from prod in products orderby prod.Name where !(prod.Name.StartsWith("H")) select prod).ToList();
       return list;
     }
     #endregion
@@ -160,8 +162,8 @@
       List<Product> list = new();
 
       // Write Method Syntax Here
-     
-
+      //list = products.SkipWhile(s=>s.Name.StartsWith("H")).ToList();
+      list = products.Where(prod=>!prod.Name.StartsWith("H")).ToList();
       return list;
     }
     #endregion
@@ -177,6 +179,8 @@
       List<string> list = new();
 
       // Write Query Syntax Here
+      // find all the unique color in the products
+      list = (from prod in products orderby prod.Color select prod.Color).Distinct().ToList();
       
 
       return list;
@@ -194,6 +198,7 @@
       List<string> list = new();
 
       // Write Method Syntax Here
+      list = products.OrderBy(s=>s.Color).Select(s=>s.Color).Distinct().ToList();
       
 
       return list;
@@ -207,6 +212,8 @@
       List<Product> list = new();
 
       // Write Query Syntax Here
+      // you can write the lambda expression inside the Distinct
+      list = (from prod in products select prod).DistinctBy(s=>s.Color).OrderBy(s=>s.Color).ToList();
 
 
       return list;
@@ -220,7 +227,7 @@
       List<Product> list = new();
 
       // Write Method Syntax Here
-
+      list = products.DistinctBy(s=>s.Color).OrderBy(s=>s.Color).ToList();
 
       return list;
     }
@@ -236,7 +243,9 @@
       List<Product[]> list = new();
 
       // Write Query Syntax Here
-      
+      // breaks down to 5 array inside a list
+      // 40 elements so 40/5 = 8 array will be there
+      list = (from prod in products select prod).Chunk(5).ToList();
 
       return list;
     }
@@ -252,7 +261,7 @@
       List<Product[]> list = new();
 
       // Write Method Syntax Here
-      
+      list = products.Chunk(5).ToList();
 
       return list;
     }
