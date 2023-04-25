@@ -14,6 +14,10 @@ SamplesViewModel vm = new();
 // var result = vm.ExceptUsingComparerMethod();
 // var result = vm.ExceptByMethod();
 // var result = vm.IntersectProductSalesQuery();
-var result = vm.IntersectProductSalesMethod();
+// var result = vm.IntersectProductSalesMethod();
+// var result = vm.IntersectByProductSalesQuery();
+// var result = vm.IntersectByProductSalesMethod();
+// var result = vm.IntersectUsingComparerQuery();
+// var result = vm.IntersectUsingComparerMethod();
 // Display Results
 vm.Display(result);
