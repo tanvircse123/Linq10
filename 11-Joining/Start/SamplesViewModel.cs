@@ -16,6 +16,16 @@
       List<SalesOrder> sales = SalesOrderRepository.GetAll();
 
       // Write Query Syntax Here
+      // this is the inner join
+      // only the common will be there
+      list = (from p in products join s in sales on p.ProductID equals s.ProductID
+              select new ProductOrder{
+                ProductID = p.ProductID,
+                Name = p.Name,
+                SalesOrderID = s.SalesOrderID,
+                OrderQty = s.OrderQty
+              }
+      ).ToList();
 
 
       return list;
@@ -87,6 +97,7 @@
     /// The 'into' keyword allows you to put the sales into a 'sales' variable 
     /// that can be used to retrieve all sales for a specific product
     /// </summary>
+    /// very very important
     public List<ProductSales> JoinIntoQuery()
     {
       List<ProductSales> list = null;
@@ -95,8 +106,24 @@
       // Load all Sales Order Data
       List<SalesOrder> sales = SalesOrderRepository.GetAll();
 
-      // Write Query Syntax Here
+      // join query
 
+      // Write Query Syntax Here
+      // list = (from prod in products join sale in sales
+      //         on prod.ProductID equals sale.ProductID
+      //         into corresponding_sale 
+      //         select new ProductSales{
+      //           Product = prod,
+      //           Sales = corresponding_sale.ToList()
+      //         } 
+      // ).ToList();
+
+
+      // sub query
+      list = (from prod in products select new ProductSales{
+              Product = prod,
+              Sales = (from sale in sales where sale.ProductID == prod.ProductID select sale).ToList()
+      }).ToList();
 
       return list;
     }
@@ -136,6 +163,29 @@
       List<SalesOrder> sales = SalesOrderRepository.GetAll();
 
       // Write Query Syntax Here
+      // left join
+      // DefaultIfEmpty() means put null if empty
+
+      list = (from prod in products 
+              join sale in sales
+              on 
+              prod.ProductID equals sale.ProductID
+              into newsales
+              from sale in newsales.DefaultIfEmpty()
+              select new ProductOrder
+              {
+                ProductID = prod.ProductID,
+                Name = prod.Name,
+                Color = prod.Color,
+                Size = prod.Size,
+                SalesOrderID = sale?.SalesOrderID,
+                StandardCost = prod.StandardCost,
+                ListPrice = prod.ListPrice,
+                OrderQty = sale?.OrderQty,
+                UnitPrice = sale?.UnitPrice,
+                LineTotal = sale?.LineTotal
+              }
+      ).OrderBy(p=>p.Name).ToList();
 
 
       return list;

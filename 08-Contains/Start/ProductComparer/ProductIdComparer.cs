@@ -19,8 +19,8 @@ namespace Start.ProductComparer
             return x.ProductID == y.ProductID;
         }
 
-        // you also need to override the get hash method
-        // since the object are reference thats why we need to find the getHash Code 
+        // bellow method will generate a hashcode
+        // for ProductId Then it will compare
         public override int GetHashCode(Product obj)
         {
             return obj.ProductID.GetHashCode();
