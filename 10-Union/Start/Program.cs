@@ -4,7 +4,8 @@
 SamplesViewModel vm = new();
 
 // Call Sample Method
-var result = vm.UnionQuery();
+// var result = vm.UnionByQuery();
+var result = vm.UnionByMethod();
 
 // Display Results
 vm.Display(result);

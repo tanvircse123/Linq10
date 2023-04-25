@@ -97,8 +97,11 @@
       List<Product> list2 = ProductRepository.GetAll();
 
       // Write Query Syntax Here
-      
-
+      // use union by
+      // union does not store duplicate value
+      // so it needs the comparer class
+      // so that it can compare
+      list = (from prod in list1 select prod).UnionBy(list2,s=>s.Color).ToList();
       return list;
     }
     #endregion
@@ -116,6 +119,8 @@
       List<Product> list2 = ProductRepository.GetAll();
 
       // Write Method Syntax Here
+      // based on the color you union it
+      list = list1.UnionBy(list2,p=>p.Color).ToList();
       
 
       return list;
@@ -176,6 +181,8 @@
       List<Product> list2 = ProductRepository.GetAll();
 
       // Write Query Syntax Here
+      // it will concat so duplicate so no checking
+      list = (from prod in list1 select prod).Concat(list2).ToList();
       
 
       return list;
@@ -196,7 +203,7 @@
       List<Product> list2 = ProductRepository.GetAll();
 
       // Write Method Syntax Here
-      
+      list = list1.Concat(list2).ToList();
 
       return list;
     }
