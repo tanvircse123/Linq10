@@ -29,8 +29,7 @@
       List<Product> products = ProductRepository.GetAll();
 
       // Write Method Syntax Here
-      
-
+      list = products.OrderBy(p=>p.Size).GroupBy(s=>s.Size).ToList();
       return list;
     }
     #endregion
@@ -116,6 +115,22 @@
       List<Product> products = ProductRepository.GetAll();
 
       // Write Method Syntax Here
+      // first arrange data with group by size
+      // then select the group in which group has more than 3 element
+      // Group by where method
+      // it simulate the having clause in sql
+      // where clause after the groupby is having clause
+      list = (from prod in products orderby prod.Size 
+              group prod by prod.Size into sizes
+              where sizes.Count()>2
+              select sizes
+      ).ToList();
+
+      // explanation
+      // select every product and then group by diffeent size and put into the variable sizes
+      // then search for each group whose Count()>2 then choose the sizes
+      // its like having just doing it with where
+
       
 
       return list;
