@@ -1,4 +1,5 @@
-﻿namespace LINQSamples
+﻿using Start.Comparer;
+namespace LINQSamples
 {
   public class SamplesViewModel : ViewModelBase
   {
@@ -16,6 +17,7 @@
       List<int> list2 = new() { 1, 2, 3, 4, 5 };
 
       // Write Query Syntax Here
+      value = (from num in list1 select num).SequenceEqual(list2); // return false
       
 
       return value;
@@ -36,7 +38,7 @@
       List<int> list2 = new() { 1, 2, 3, 4, 5 };
 
       // Write Method Syntax Here
-     
+      value = list1.SequenceEqual(list2); // return false
 
       return value;
     }
@@ -66,6 +68,9 @@
       // list2 = list1;
 
       // Write Query Syntax Here
+      // even the properties are exactly same but the object are not
+      // so we need a comparer class
+      value = (from prod in list1 select prod).SequenceEqual(list2);// return false
       
 
       return value;
@@ -96,7 +101,7 @@
       // list2 = list1;
 
       // Write Method Syntax Here
-      
+      value = list1.SequenceEqual(list2); // return false
 
       return value;
     }
@@ -119,7 +124,7 @@
       //list1.RemoveAt(0);
 
       // Write Query Syntax Here
-      
+      value = (from prod in list1 select prod).SequenceEqual(list2,pc);
 
       return value;
     }
@@ -139,10 +144,10 @@
       List<Product> list2 = ProductRepository.GetAll();
 
       // Remove an element from 'list1' to make the collections different
-      //list1.RemoveAt(0);
+      list1.RemoveAt(0);
 
       // Write Method Syntax Here
-      
+      value = list1.SequenceEqual(list2,pc);
 
       return value;
     }
@@ -160,8 +165,11 @@
       // Create a list of numbers
       List<int> list2 = new() { 3, 4, 5 };
 
-      // Write Query Syntax Here
+      // return the data that is not common between two collection
+      // in a list
       
+      // Write Query Syntax Here
+      list = (from num in list1 select num).Except(list2).ToList();
 
       return list;
     }
@@ -180,7 +188,7 @@
       List<int> list2 = new() { 3, 4, 5 };
 
       // Write Method Syntax Here
-      
+      list = list1.Except(list2).ToList();
 
       return list;
     }
@@ -196,9 +204,16 @@
       List<Product> products = ProductRepository.GetAll();
       List<SalesOrder> sales = SalesOrderRepository.GetAll();
 
-      // Write Query Syntax Here
-      
+      // one product can have in multiple sales
+      // but this senario can also happen that
+      // a product has no sale in sale list
+      // one to many relation ship
+      // my job is to find the product that has no sales
 
+      //1) i gather all the productID from the Product Table
+      //2) then i gather all the product Id from the sales table
+      //3) then i find the not common elements with excepts
+      list = (from prod in products select prod.ProductID).Except(from sale in sales select sale.ProductID).ToList();
       return list;
     }
     #endregion
@@ -215,7 +230,7 @@
 
       // Write Method Syntax Here
 
-
+      list = products.Select(p=>p.ProductID).Except(sales.Select(s=>s.ProductID)).ToList();
       return list;
     }
     #endregion
@@ -238,6 +253,7 @@
       list2.RemoveAll(prod => prod.Color == "Black");
 
       // Write Query Syntax Here
+      list = (from prod in list1 select prod).Except(list2,pc).ToList();
       
 
       return list;
@@ -262,6 +278,9 @@
       list2.RemoveAll(prod => prod.Color == "Black");
 
       // Write Method Syntax Here
+      // Except also take a comparer while 
+      // comparing which one to except
+      list = list1.Except(list2,pc).ToList();
       
 
       return list;
@@ -283,6 +302,7 @@
       List<string> colors = new() { "Red", "Black" };
 
       // Write Query Syntax Here
+      list = products.ExceptBy(colors,p=>p.Color).ToList();
       
 
       return list;
@@ -304,6 +324,10 @@
       List<string> colors = new() { "Red", "Black" };
 
       // Write Method Syntax Here
+      // in exceptBy you dont need a comparer class
+      // for example we need every product except the product which
+      // has color Red and white
+      list = (from product in products select product).ExceptBy(colors,p=>p.Color).ToList();
       
 
       return list;
@@ -322,6 +346,7 @@
       List<SalesOrder> sales = SalesOrderRepository.GetAll();
 
       // Write Query Syntax Here
+      
       
 
       return list;
@@ -359,6 +384,8 @@
       List<int> list2 = new() { 3, 4, 5 };
 
       // Write Query Syntax Here
+      // find common
+      list = (from num in list1 select num).Intersect(list2).ToList();
       
 
       return list;
@@ -378,7 +405,7 @@
       List<int> list2 = new() { 3, 4, 5 };
 
       // Write Method Syntax Here
-      
+      list = list1.Intersect(list2).ToList();
 
       return list;
     }
@@ -395,6 +422,10 @@
       List<SalesOrder> sales = SalesOrderRepository.GetAll();
 
       // Write Query Syntax Here
+      // this is the oppsite of the previous
+      // find all th eproducts what are in sale
+      list = ((from prod in products select prod.ProductID)
+               .Intersect(from sale in sales select sale.ProductID)).ToList();
       
 
       return list;
@@ -412,7 +443,7 @@
       List<SalesOrder> sales = SalesOrderRepository.GetAll();
 
       // Write Method Syntax Here
-
+      list = (products.Select(s=>s.ProductID)).Intersect((sales.Select(p=>p.ProductID))).ToList();
 
       return list;
     }
