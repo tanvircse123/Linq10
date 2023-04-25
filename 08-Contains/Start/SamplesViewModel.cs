@@ -1,4 +1,5 @@
-﻿namespace LINQSamples
+﻿using Start.ProductComparer;
+namespace LINQSamples
 {
   public class SamplesViewModel : ViewModelBase
   {
@@ -12,8 +13,9 @@
       bool value = false;
 
       // Write Query Syntax Here
-      
-
+      // if all elements are true for the condition then return true
+      // otherwise return false
+      value = (from prod in products select prod).All(prod=>prod.ListPrice> prod.StandardCost);
       return value;
     }
     #endregion
@@ -26,7 +28,7 @@
     {
       List<Product> products = GetProducts();
       bool value = false;
-
+      value = products.All(prod=>prod.ListPrice> prod.StandardCost);
       // Write Method Syntax Here
       
 
@@ -43,6 +45,7 @@
       List<SalesOrder> sales = GetSales();
       bool value = false;
 
+      value = (from sale in sales select sale).All(sale=>sale.OrderQty >0);
       // Write Query Syntax Here
       
 
@@ -58,10 +61,8 @@
     {
       List<SalesOrder> sales = GetSales();
       bool value = false;
-
+      value = sales.All(sale=>sale.OrderQty >0);
       // Write Method Syntax Here
-      
-
       return value;
     }
     #endregion
@@ -72,11 +73,16 @@
     /// </summary>
     public bool AnyQuery()
     {
+
+      // if any of the element is true in condition
+      // return true
+      // other wise return false
+      // if just one is matched then return true
       List<SalesOrder> sales = GetSales();
       bool value = false;
 
       // Write Query Syntax Here
-      
+      value = (from sale in sales select sale).Any(s=>s.OrderQty > 10000);
 
       return value;
     }
@@ -90,7 +96,7 @@
     {
       List<SalesOrder> sales = GetSales();
       bool value = false;
-
+      value = sales.Any(s=>s.OrderQty > 10000);
       // Write Method Syntax Here
       
 
@@ -108,7 +114,8 @@
       bool value = false;
 
       // Write Query Syntax Here
-      
+      // value = (from number in numbers select number).Contains(3); // return true
+      // value = (from number in numbers select number).Contains(100); // return false
 
       return value;
     }
@@ -124,7 +131,8 @@
       bool value = false;
 
       // Write Method Syntax Here
-      
+      // value = numbers.Contains(3); // return true
+      // value = numbers.Contains(100); // return false
 
       return value;
     }
@@ -141,7 +149,8 @@
       bool value = false;
 
       // Write Query Syntax Here
-      
+      // contains take a product object and a comparer
+      value = (from prod in products select prod).Contains(new Product{ProductID = 706},pc);
 
       return value;
     }
@@ -159,6 +168,7 @@
       bool value = false;
 
       // Write Method Syntax Here
+      value = products.Contains(new Product{ProductID = 706},pc);
       
 
       return value;
